@@ -138,10 +138,10 @@ export async function createOrUpdateBranch(
 
   // Perform fetch and reset the working base
   // Commits made during the workflow will be removed
-  if (workingBaseType == WorkingBaseType.Branch) {
-    core.info(`Resetting working base branch '${workingBase}' to its remote`)
-    await git.fetch([`${workingBase}:${workingBase}`], baseRemote, ['--force'])
-  }
+  //if (workingBaseType == WorkingBaseType.Branch) {
+  //  core.info(`Resetting working base branch '${workingBase}' to its remote`)
+  //  await git.fetch([`${workingBase}:${workingBase}`], baseRemote, ['--force'])
+  //}
 
   // If the working base is not the base, rebase the temp branch commits
   // This will also be true if the working base type is a commit
