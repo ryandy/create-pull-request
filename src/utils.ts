@@ -122,7 +122,7 @@ export function fileExistsSync(path: string): boolean {
   try {
     stats = fs.statSync(path)
   } catch (error) {
-    if (error.code === 'ENOENT') {
+    if (error.code === 'ENOENT' || error.code == 'ENOTDIR') {
       return false
     }
 

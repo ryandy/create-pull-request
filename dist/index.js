@@ -1208,7 +1208,7 @@ function fileExistsSync(path) {
         stats = fs.statSync(path);
     }
     catch (error) {
-        if (error.code === 'ENOENT') {
+        if (error.code === 'ENOENT' || error.code == 'ENOTDIR') {
             return false;
         }
         throw new Error(`Encountered an error when checking whether path '${path}' exists: ${error.message}`);
